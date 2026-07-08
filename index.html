@@ -1,32 +1,418 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Baloncesto - Osiris Nallely Don Pablo Ocampo</title>
+<title>El Mundo del Baloncesto | Osiris Nallely Don Pablo Ocampo</title>
+
 <style>
-body{margin:0;font-family:Arial;background:#eef4ff;color:#222}
-header{background:linear-gradient(90deg,#0b3d91,#ff7a00);color:#fff;padding:20px;text-align:center}
-nav{background:#111;padding:10px;position:sticky;top:0}nav a{color:#fff;margin:0 12px;text-decoration:none}
-section{max-width:1000px;margin:20px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px #ccc}
-.hero img,.gal img{width:100%;border-radius:10px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{background:#f7f7f7;padding:15px;border-left:5px solid #ff7a00}
-footer{background:#0b3d91;color:#fff;text-align:center;padding:20px;margin-top:30px}
-</style></head><body>
-<header><h1>🏀 El Mundo del Baloncesto</h1><p>Página creada por <b>Osiris Nallely Don Pablo Ocampo</b></p></header>
-<nav><a href="#quees">¿Qué es?</a><a href="#historia">Historia</a><a href="#reglas">Reglas</a><a href="#jugadores">Jugadores</a></nav>
-<section class="hero"><h2>Bienvenido</h2><p>El baloncesto es uno de los deportes más populares del mundo...</p></section>
-<section id="quees"><h2>¿Qué es el baloncesto?</h2><p>El baloncesto es un deporte de equipo en el que dos conjuntos de cinco jugadores intentan encestar el balón en la canasta del equipo contrario. Además de la condición física, desarrolla coordinación, velocidad, estrategia, comunicación y trabajo en equipo. Es uno de los deportes más practicados en escuelas y ligas profesionales.</p></section>
-<section id="historia"><h2>Historia</h2><p>Fue inventado en 1891 por James Naismith en Springfield, Massachusetts, con el propósito de crear un deporte que pudiera jugarse bajo techo durante el invierno. Con el paso del tiempo evolucionó hasta convertirse en una disciplina practicada en todo el mundo y con competencias profesionales como la NBA y torneos internacionales organizados por la FIBA.</p></section>
-<section id="reglas"><h2>Reglas básicas</h2><div class="cards">
-<div class="card"><h3>Equipos</h3><p>Cada equipo juega con cinco jugadores en la cancha y puede realizar cambios durante el partido.</p></div>
-<div class="card"><h3>Puntos</h3><p>Los tiros libres valen 1 punto, los lanzamientos dentro del arco 2 puntos y detrás de la línea de tres, 3 puntos.</p></div>
-<div class="card"><h3>Objetivo</h3><p>Gana el equipo que anota más puntos al finalizar el tiempo reglamentario.</p></div>
-<div class="card"><h3>Duración</h3><p>Un partido FIBA se juega en cuatro periodos de 10 minutos; en la NBA son cuatro de 12 minutos.</p></div></div></section>
-<section id="jugadores"><h2>Leyendas</h2><div class="cards">
-<div class="card"><h3>Michael Jordan</h3><p>Considerado por muchos el mejor jugador de la historia por sus seis campeonatos con Chicago Bulls.</p></div>
-<div class="card"><h3>LeBron James</h3><p>Máximo anotador histórico de la NBA y reconocido por su versatilidad.</p></div>
-<div class="card"><h3>Stephen Curry</h3><p>Revolucionó el baloncesto moderno con su extraordinario tiro de tres puntos.</p></div>
-<div class="card"><h3>Kobe Bryant</h3><p>Figura legendaria recordada por su mentalidad competitiva y cinco campeonatos.</p></div>
-</div></section>
 
-<footer><h3>Proyecto de HTML</h3><p>Creada por <b>Osiris Nallely Don Pablo Ocampo</b> © 2026.</p></footer>
-</body></html>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef4ff;
+color:#222;
+line-height:1.7;
+}
+
+header{
+background:linear-gradient(90deg,#0b3d91,#ff7a00);
+color:white;
+text-align:center;
+padding:25px;
+}
+
+header h1{
+font-size:2.3rem;
+}
+
+nav{
+background:#111;
+padding:12px;
+position:sticky;
+top:0;
+text-align:center;
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffb347;
+}
+
+main{
+max-width:1100px;
+margin:25px auto;
+padding:15px;
+}
+
+section{
+background:white;
+margin-bottom:25px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+h2{
+color:#0b3d91;
+margin-bottom:15px;
+border-bottom:3px solid #ff7a00;
+padding-bottom:8px;
+}
+
+h3{
+color:#ff7a00;
+margin-top:15px;
+}
+
+img{
+display:block;
+max-width:90%;
+margin:20px auto;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f7f7f7;
+padding:18px;
+border-left:6px solid #ff7a00;
+border-radius:8px;
+}
+
+.reproductor{
+background:#eef4ff;
+padding:20px;
+text-align:center;
+border-radius:10px;
+}
+
+audio{
+width:100%;
+max-width:450px;
+margin-top:15px;
+}
+
+.video{
+text-align:center;
+}
+
+iframe{
+width:100%;
+max-width:760px;
+height:420px;
+border:none;
+border-radius:10px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.galeria img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.autora{
+max-width:260px;
+border:4px solid #ff7a00;
+}
+
+footer{
+background:#0b3d91;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🏀 El Mundo del Baloncesto</h1>
+
+<p>Proyecto elaborado por <b>Osiris Nallely Don Pablo Ocampo</b></p>
+
+</header>
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#quees">¿Qué es?</a>
+<a href="#historia">Historia</a>
+<a href="#reglas">Reglas</a>
+<a href="#leyendas">Leyendas</a>
+<a href="#galeria">Galería</a>
+<a href="#musica">Música</a>
+<a href="#video">Video</a>
+<a href="#autora">Autora</a>
+
+</nav>
+
+<main>
+
+<section id="inicio">
+
+<h2>Bienvenido al Mundo del Baloncesto</h2>
+
+<img src="hero.jpg" alt="Baloncesto">
+
+<p>
+El baloncesto es uno de los deportes más populares y emocionantes del mundo. Se practica en casi todos los países y reúne a millones de aficionados que disfrutan de su velocidad, estrategia y espectáculo.
+</p>
+
+<br>
+
+<p>
+Además de ser una actividad física muy completa, fomenta el trabajo en equipo, la disciplina, el respeto y la toma rápida de decisiones. Gracias a competencias como la NBA, la FIBA y los Juegos Olímpicos, este deporte ha alcanzado una enorme popularidad internacional.
+</p>
+
+</section>
+
+<section id="quees">
+
+<h2>¿Qué es el baloncesto?</h2>
+
+<img src="reglas.jpg" alt="¿Qué es el baloncesto?">
+
+<p>
+El baloncesto es un deporte de equipo en el que participan dos conjuntos de cinco jugadores. El objetivo consiste en anotar la mayor cantidad de puntos posibles introduciendo el balón en la canasta del equipo contrario mientras se defiende la propia.
+</p>
+
+<p>
+Este deporte desarrolla habilidades como la coordinación, la velocidad, el equilibrio, la resistencia física y el trabajo colaborativo, convirtiéndose en una excelente actividad para personas de todas las edades.
+</p>
+
+</section>
+
+<section id="historia">
+
+<h2>Historia del Baloncesto</h2>
+
+<img src="historia.jpg" alt="Historia del baloncesto">
+
+<p>
+El baloncesto fue inventado en 1891 por James Naismith en Springfield, Massachusetts, Estados Unidos. Su objetivo era crear un deporte que pudiera practicarse bajo techo durante el invierno.
+</p>
+
+<p>
+Con el paso de los años, las reglas evolucionaron y el baloncesto se convirtió en uno de los deportes más importantes del mundo, dando origen a ligas profesionales como la NBA y competencias internacionales organizadas por la FIBA.
+</p>
+
+</section>
+<section id="reglas">
+
+<h2>Reglas Básicas del Baloncesto</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏀 Equipos</h3>
+<p>Cada equipo está formado por cinco jugadores dentro de la cancha. También cuenta con jugadores suplentes que pueden entrar durante el partido.</p>
+</div>
+
+<div class="card">
+<h3>⛹️ Puntuación</h3>
+<p>Los tiros libres valen 1 punto, los lanzamientos dentro de la línea de tres puntos valen 2 y los tiros desde fuera del arco valen 3 puntos.</p>
+</div>
+
+<div class="card">
+<h3>⏱️ Duración</h3>
+<p>Los partidos oficiales de la FIBA se juegan en cuatro periodos de 10 minutos cada uno. En la NBA son cuatro periodos de 12 minutos.</p>
+</div>
+
+<div class="card">
+<h3>🏆 Objetivo</h3>
+<p>El equipo ganador será aquel que consiga anotar la mayor cantidad de puntos antes de que termine el tiempo reglamentario.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="leyendas">
+
+<h2>Leyendas del Baloncesto</h2>
+
+<img src="leyendas.jpg" alt="Leyendas del baloncesto">
+
+<div class="cards">
+
+<div class="card">
+<h3>Michael Jordan</h3>
+<p>Es considerado por millones de personas como el mejor jugador de todos los tiempos. Ganó seis campeonatos de la NBA con los Chicago Bulls y fue elegido cinco veces Jugador Más Valioso.</p>
+</div>
+
+<div class="card">
+<h3>LeBron James</h3>
+<p>Es uno de los jugadores más completos de la historia del baloncesto. Ha conquistado varios campeonatos y es reconocido por su capacidad para anotar, asistir y defender.</p>
+</div>
+
+<div class="card">
+<h3>Stephen Curry</h3>
+<p>Transformó la forma de jugar gracias a su increíble precisión en los tiros de tres puntos. Es considerado el mejor tirador de la historia.</p>
+</div>
+
+<div class="card">
+<h3>Kobe Bryant</h3>
+<p>Fue una de las máximas figuras de Los Angeles Lakers. Ganó cinco campeonatos de la NBA y es recordado por su disciplina, liderazgo y la famosa Mentalidad Mamba.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="galeria">
+
+<h2>Galería del Baloncesto</h2>
+
+<div class="galeria">
+
+<div>
+<img src="galeria1.jpg" alt="Partido profesional">
+<p style="text-align:center;">Partido profesional de baloncesto.</p>
+</div>
+
+<div>
+<img src="galeria2.jpg" alt="Encestando">
+<p style="text-align:center;">Un espectacular lanzamiento a la canasta.</p>
+</div>
+
+<div>
+<img src="galeria3.jpg" alt="Cancha de baloncesto">
+<p style="text-align:center;">Cancha preparada para un gran encuentro.</p>
+</div>
+
+</div>
+
+</section>
+<section id="curiosidades">
+
+<h2>Curiosidades del Baloncesto</h2>
+
+<ul>
+    <li>🏀 El baloncesto fue inventado en el año 1891 por James Naismith.</li>
+    <li>🌎 Actualmente se practica en más de 200 países.</li>
+    <li>🥇 Es uno de los deportes oficiales de los Juegos Olímpicos desde 1936.</li>
+    <li>⛹️ Michael Jordan ganó seis campeonatos de la NBA con los Chicago Bulls.</li>
+    <li>🎯 Stephen Curry es considerado el mejor tirador de tres puntos de la historia.</li>
+    <li>🏆 La NBA es la liga profesional de baloncesto más famosa del mundo.</li>
+</ul>
+
+</section>
+
+<section id="importancia">
+
+<h2>Importancia del Baloncesto</h2>
+
+<p>
+El baloncesto no solo es un deporte de competencia, también contribuye al desarrollo físico, mental y social de quienes lo practican. Ayuda a mejorar la condición física, fortalece los músculos, aumenta la resistencia y favorece la coordinación.
+</p>
+
+<br>
+
+<p>
+Además, fomenta valores como el respeto, la disciplina, la responsabilidad, la perseverancia y el trabajo en equipo. Gracias a estos beneficios, millones de niños, jóvenes y adultos practican este deporte en escuelas, clubes y ligas profesionales alrededor del mundo.
+</p>
+
+</section>
+
+<section id="musica">
+
+<h2>🎵 Música para acompañar la lectura</h2>
+
+<div class="reproductor">
+
+<p>Puedes escuchar esta música instrumental mientras recorres la página.</p>
+
+<audio controls>
+
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+
+Tu navegador no soporta el elemento de audio.
+
+</audio>
+
+</div>
+
+</section>
+
+<section id="video">
+
+<h2>📺 Video sobre el Baloncesto</h2>
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/oyjYgmsM00Q"
+title="Historia del Baloncesto"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+<section id="autora">
+
+<h2>👩 Sobre la Autora</h2>
+
+<img src="osiris.jpg" alt="Osiris Nallely Don Pablo Ocampo" class="autora">
+
+<p style="text-align:center;font-size:1.2rem;font-weight:bold;color:#0b3d91;margin-top:15px;">
+Osiris Nallely Don Pablo Ocampo
+</p>
+
+<p style="text-align:center;">
+Soy estudiante y elaboré esta página web como proyecto de HTML para compartir información sobre el baloncesto, uno de los deportes más emocionantes y populares del mundo. Mi objetivo es dar a conocer su historia, reglas, jugadores más destacados e importancia, utilizando herramientas de diseño web aprendidas en clase.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+
+<h3>🏀 Proyecto de HTML</h3>
+
+<p>
+Página creada por <strong>Osiris Nallely Don Pablo Ocampo</strong>
+</p>
+
+<p>
+© 2026 | El Mundo del Baloncesto
+</p>
+
+</footer>
+
+</body>
+</html>
